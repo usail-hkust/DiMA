@@ -4,4 +4,4 @@
 
 ## Case Study
 
-![Case Study](./case_study.png)
+![Case Study](https://github.com/usail-hkust/DiMA/blob/main/Case_Study.png)
