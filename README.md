@@ -4,7 +4,7 @@ Official project for paper ["DiMA: An LLM-Powered Ride-Hailing Assistant at DiDi
 
 ## Prompt Template
 
-We present the prompt template of every module in './prompt'.
+We present the prompt template of every module in './Prompt'.
 
 
 ## Case Study
