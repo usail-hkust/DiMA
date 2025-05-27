@@ -21,7 +21,7 @@
 
 Official project for KDD 2025 paper ["DiMA: An LLM-Powered Ride-Hailing Assistant at DiDi"](https://arxiv.org/pdf/2503.04768).
 
-DiMA is an LLM-powered ride-hailing assistant deployed in DiDi Chuxing. Its goal is to provide seamless ride-hailing services and beyond through a natural and efficient conversational interface under dynamic and complex spatiotemporal urban contexts.
+DiMA is an LLM-powered ride-hailing assistant. Its goal is to provide seamless ride-hailing services and beyond through a natural and efficient conversational interface under dynamic and complex spatiotemporal urban contexts.
 
 ## 2 Prompt Template
 
