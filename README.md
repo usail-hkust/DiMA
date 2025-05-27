@@ -8,9 +8,22 @@
 
 </p>
 
+<p align="center">
+
+| **[1 Introduction](#introduction)** 
+| **[2 Prompt Tempalte](#requirements)**
+| **[3 Case Study](#usage)**
+| **[4 Citation](#citation)**
+
+</p>
+
+## 1 Introduction
+
 Official project for KDD 2025 paper ["DiMA: An LLM-Powered Ride-Hailing Assistant at DiDi"](https://arxiv.org/pdf/2503.04768).
 
-## Prompt Template
+DiMA is an LLM-powered ride-hailing assistant deployed in DiDi Chuxing. Its goal is to provide seamless ride-hailing services and beyond through a natural and efficient conversational interface under dynamic and complex spatiotemporal urban contexts.
+
+## 2 Prompt Template
 
 We present the prompt template of every module in './Prompt'.
 
@@ -34,10 +47,24 @@ As discussed in the methodology, the error-handling pipeline aims to politely re
 
 We add retrieved QA pairs into the prompt and explicitly prompt LLMs to follow these similar QA pairs to generate the response. Specifically, we achieve prompt extension (\ie adding a task re-profile and retrieved QA pairs) based on the prompt of the specialized dialog replier. The added prompt template is shown in [./Prompt/knowledge-enhanced dialog replier.md](https://github.com/usail-hkust/DiMA/blob/main/Prompt/knowledge-enhanced%20dialog%20replier.md).  As can be seen, we provide current user query, retrieved assistant response, and corresponding similarity score in the prompt, beginning with an initial task re-profile.
 
-## Case Study
+## 3 Case Study
 
 We present a case study of DiMA to illustrate how DiMA creates a ride-hailing order and provides a response given a user query.
 
 The following figure shows the entire dialog session:
 
 ![Case Study](https://github.com/usail-hkust/DiMA/blob/main/Case_Study.png)
+
+## 4 Citation
+
+If you find our work is useful for your research, please consider citing:
+
+```
+@article{ning2025dima,
+  title={DiMA: An LLM-Powered Ride-Hailing Assistant at DiDi},
+  author={Ning, Yansong and Cai, Shuowei and Li, Wei and Fang, Jun and Tan, Naiqiang and Chai, Hua and Liu, Hao},
+  journal={arXiv preprint arXiv:2503.04768},
+  year={2025}
+}
+```
+
