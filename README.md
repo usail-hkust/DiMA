@@ -18,6 +18,9 @@
 </p>
 
 ## 1 Introduction
+<div style="display: flex; justify-content: center;">
+  <img src="https://github.com/usail-hkust/DiMA/Figure1.png">
+</div>
 
 Official project for KDD 2025 paper ["DiMA: An LLM-Powered Ride-Hailing Assistant at DiDi"](https://arxiv.org/pdf/2503.04768).
 
