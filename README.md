@@ -14,21 +14,25 @@ Official project for KDD 2025 paper ["DiMA: An LLM-Powered Ride-Hailing Assistan
 
 We present the prompt template of every module in './Prompt'.
 
-### Spatiotemporal-aware Tool-augmented Order Planning
+#### Spatiotemporal-aware Tool-augmented Order Planning
 
 As mentioned in the methodology, this module conducts spatial mapping, temporal reasoning, and progressive order planning. The entire process is achieved through a function call. In this section, we provide the detailed prompt template in ['./Prompt/Spatiotemporal-aware tool-augmented order planning.md'](https://github.com/usail-hkust/DiMA/blob/main/Prompt/Spatiotemporal-aware%20tool-augmented%20order%20planning.md). As can be seen in the demonstration in the prompt, when the user just inputs an address Hongyuan, DiMA will automatically generate a set of function call, which will be sequentially executed to achieve order planning.
 
-### Multi-type Dialog Replier Selection
+#### Multi-type Dialog Replier Selection
 
 After order planning, the dialog policy will be generated to allocate different dialog replies for response generation. Specifically, we fully utilize all current information for allocating, including the current user query, history dialog, current time, and intermediate executed system results. We provide the prompt template in ['./Prompt/Dialog replier selection mechanism.md'](https://github.com/usail-hkust/DiMA/blob/main/Prompt/Dialog%20replier%20selection%20mechanism.md). As can be seen, we first provide a well-illustrative description of this task, and then we explain the input respectively, including history dialog, current user query, executing results, current time, and order status. Then, we providea  description of each dialog replier scenario to help it understand how to perform response replier allocation. Before controlling output format, we adda  demonstration example in the prompt.
 
-### Specialized Dialog Relpier
+#### Specialized Dialog Relpier
 
-In a specialized response generation pipeline, we will follow a formulaic response style to generate the assistant's response.  The prompt template is provided in [./Prompt/specialized dialog replier.md](https://github.com/usail-hkust/DiMA/blob/main/Prompt/specialized%20dialog%20replier.md).  As can be seen, we provide four illustrative response styles to deal with different response scenarios. To conserve space, we omitted the full prompt and detailed explanation of each component (\ie <historical conversation>, <current user query>, and <current time>) since they are identical to those shown in ['./Prompt/Dialog replier selection mechanism.md'](https://github.com/usail-hkust/DiMA/blob/main/Prompt/Dialog%20replier%20selection%20mechanism.md). The explanations of these items are also shortened for the error-handling and knowledge-enhanced dialog replier.
+In a specialized response generation pipeline, we will follow a formulaic response style to generate the assistant's response.  The prompt template is provided in [./Prompt/specialized dialog replier.md](https://github.com/usail-hkust/DiMA/blob/main/Prompt/specialized%20dialog%20replier.md).  As can be seen, we provide four illustrative response styles to deal with different response scenarios. To conserve space, we omitted the full prompt and detailed explanation of each component (\ie <historical conversation>, <current user query>, and <current time>) since they are identical to those shown in ['./Prompt/Dialog replier selection mechanism.md'](https://github.com/usail-hkust/DiMA/blob/main/Prompt/Dialog%20replier%20selection%20mechanism.md). The explanations of these items are also shortened for the error-handling and knowledge-enhanced dialog replied.
 
+#### Error-handling Dialog Replier
 
+As discussed in the methodology, the error-handling pipeline aims to politely reject the user's unmet request or further ask the user for more detailed ride-hailing intent. Specifically, we add a few instructions and provide corresponding demonstrations (\ie how to incorporate the system error for a better response) based on the prompt of the specialized dialog replier. The added prompt content is shown in ['./Prompt/error-handling dialog replier.md/'](https://github.com/usail-hkust/DiMA/blob/main/Prompt/error-handling%20dialog%20replier.md). As shown in the prompt, the core is to add the explanation of the contradictions identified and to provide examples of contradictions to help the LLMs know how to reply in these situations.
 
+#### Knowledge-enhanced Dialog Replier
 
+We add retrieved QA pairs into the prompt and explicitly prompt LLMs to follow these similar QA pairs to generate the response. Specifically, we achieve prompt extension (\ie adding a task re-profile and retrieved QA pairs) based on the prompt of the specialized dialog replier. The added prompt template is shown in [./Prompt/knowledge-enhanced dialog replier.md](https://github.com/usail-hkust/DiMA/blob/main/Prompt/knowledge-enhanced%20dialog%20replier.md).  As can be seen, we provide current user query, retrieved assistant response, and corresponding similarity score in the prompt, beginning with an initial task re-profile.
 
 ## Case Study
 
